@@ -1,0 +1,515 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Orbitron', sans-serif;
+}
+
+body{
+  background:#0d0d0d;
+  color:white;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  position:fixed;
+  width:100%;
+  background:#111;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+
+.logo{
+  color:#ff1e00;
+  font-size:32px;
+  font-weight:bold;
+}
+
+/* Alterado para alinhar perfeitamente os links e o input na horizontal */
+nav{
+  display:flex;
+  align-items:center;
+}
+
+nav a{
+  color:white;
+  margin-left:25px;
+  text-decoration:none;
+  font-size:18px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#ff1e00;
+}
+
+/* ---- CÓDIGO DA BARRA DE PESQUISA ---- */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-left: 25px; /* Mantém o mesmo espaçamento padrão dos links */
+  transition: border-color 0.3s ease;
+}
+
+/* Acende a borda em vermelho F1 quando clica para digitar */
+.search-box:focus-within {
+  border-color: #ff1e00;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 140px;
+  transition: width 0.3s ease;
+}
+
+/* Expande sutilmente de tamanho quando ativa */
+.search-box input:focus {
+  width: 180px;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+.search-box button {
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.search-box button:hover {
+  color: #ff1e00;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  height:100vh;
+  background:url('entrada.gif') center center/cover no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  text-align:center;
+}
+
+/* ESCURECER FUNDO */
+
+.overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+
+/* CONTEÚDO CENTRAL */
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+  padding:120px 20px 20px;
+  animation:fade 2s ease;
+}
+
+/* TÍTULO PRINCIPAL */
+
+.hero-content h1{
+  font-size:70px;
+  color:white;
+  text-transform:uppercase;
+  text-shadow:0 0 20px red;
+  margin-bottom:20px;
+}
+
+/* TEXTO */
+
+.hero-content p{
+  font-size:28px;
+  color:#f1f1f1;
+  margin-bottom:35px;
+  line-height:1.5;
+}
+
+/* BOTÕES */
+
+.botoes{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* BOTÃO */
+
+.btn{
+  padding:15px 35px;
+  background:#ff1e00;
+  color:white;
+  text-decoration:none;
+  border-radius:40px;
+  font-size:18px;
+  transition:0.3s;
+  box-shadow:0 0 15px rgba(255,0,0,0.4);
+}
+
+.btn:hover{
+  background:white;
+  color:#ff1e00;
+  transform:translateY(-5px);
+}
+
+/* ================= PÁGINAS ================= */
+
+.pagina{
+  padding:180px 8% 80px;
+  min-height:100vh;
+  position:relative;
+}
+
+/* ESCURECER FUNDO */
+
+.pagina::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.75);
+}
+
+/* CONTEÚDO */
+
+.pagina > *{
+  position:relative;
+  z-index:2;
+}
+
+/* TÍTULOS */
+
+h1{
+  text-align:center;
+  font-size:72px;
+  color:#ff1e00;
+  margin-bottom:70px;
+}
+
+/* GRID */
+
+.equipes-container{
+  display:grid;
+  gap:35px;
+}
+
+/* ================= PÁGINA SOBRE (NOVO) ================= */
+
+.pagina-sobre {
+  padding-top: 160px; 
+}
+
+.sobre-conteudo {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: left; 
+}
+
+.sobre-conteudo h1 {
+  text-align: center;
+  font-size: 64px;
+  color: #ff1e00;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(255, 30, 0, 0.3);
+}
+
+.sobre-conteudo .introducao {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #f1f1f1;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.sobre-conteudo h2 {
+  font-size: 32px;
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sobre-conteudo p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+.pontos-f1 {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.pontos-f1 li {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.pontos-f1 li::before {
+  content: "■";
+  color: #ff1e00;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+.pontos-f1 strong {
+  color: white;
+  font-size: 19px;
+}
+
+.sobre-conteudo .fundo-equipes {
+  margin-top: 40px;
+  background: #111;
+  padding: 20px;
+  border-left: 4px solid #ff1e00;
+  border-radius: 4px;
+}
+
+.sobre-conteudo .fundo-equipes span {
+  color: white;
+  font-weight: bold;
+}
+/* ================= IMAGENS DE FUNDO CUSTOMIZADAS ================= */
+
+/* Fundo para a página Sobre */
+.pagina-sobre {
+    background: url('logo.jpg') center center/cover no-repeat fixed;
+}
+
+/* Fundo para a página de Equipes */
+.pagina-equipes {
+    background: url('logo.jpg') center center/cover no-repeat fixed;
+}
+
+/* Fundo para a página de Pilotos/Galeria */
+.pagina-pilotos {
+    background: url('logo.jpg') center center/cover no-repeat fixed;
+}
+
+/* ================= EQUIPES ================= */
+
+.pagina-equipes .equipes-container{
+  grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+}
+
+.pagina-equipes .equipe{
+  background:#1a1a1a;
+  border-radius:20px;
+  overflow:hidden;
+  transition:.35s;
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.pagina-equipes .equipe:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 25px rgba(255,0,0,0.45);
+}
+
+.pagina-equipes img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.pagina-equipes .equipe:hover img{
+  transform:scale(1.05);
+}
+
+.pagina-equipes .equipe h2{
+  font-size:42px;
+  padding:18px 20px 5px;
+  color:white;
+}
+
+.pagina-equipes .equipe p{
+  padding:0 20px 25px;
+  color:#d0d0d0;
+  font-size:22px;
+}
+
+/* ================= PILOTOS ================= */
+
+.pagina-pilotos .equipes-container{
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:25px;
+}
+
+.pagina-pilotos .equipe{
+  border-radius:20px;
+  overflow:hidden;
+  background:#101820;
+  transition:.3s;
+}
+
+.pagina-pilotos .equipe:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 20px rgba(255,0,0,0.35);
+}
+
+.pagina-pilotos img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+}
+
+.pagina-pilotos .equipe h2{
+  text-align:center;
+  padding:15px 10px 5px;
+  font-size:24px;
+  color:#ff1e00;
+}
+
+.piloto{
+  font-weight:bold;
+  padding:8px 20px 0;
+  text-align:center;
+  font-size:18px;
+}
+
+.pagina-pilotos .equipe p{
+  text-align:center;
+  padding:5px 20px 15px;
+  font-size:15px;
+  color:#ccc;
+  line-height:1.4;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#111;
+  text-align:center;
+  padding:20px;
+  font-size:16px;
+}
+
+/* ================= ANIMAÇÃO ================= */
+
+@keyframes fade{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    padding:20px;
+  }
+
+  nav{
+    margin-top:15px;
+    flex-direction: column; /* Organiza os links empilhados no mobile */
+    gap: 12px;
+  }
+
+  nav a{
+    margin-left: 0;
+  }
+
+  /* Ajuste da barra de busca no Mobile */
+  .search-box {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  h1{
+    font-size:48px;
+  }
+
+  .hero-content h1{
+    font-size:50px;
+  }
+
+  .hero-content p{
+    font-size:20px;
+  }
+
+  .pagina-equipes .equipes-container{
+    grid-template-columns:1fr;
+  }
+
+  .pagina-equipes img{
+    height:240px;
+  }
+
+  .pagina-equipes .equipe h2{
+    font-size:32px;
+  }
+
+  .pagina-equipes .equipe p{
+    font-size:18px;
+  }
+
+  .pagina-sobre {
+    padding-top: 140px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .sobre-conteudo h1 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+
+  .sobre-conteudo .introducao {
+    font-size: 18px;
+  }
+
+  .sobre-conteudo h2 {
+    font-size: 24px;
+  }
+
+  .sobre-conteudo p, 
+  .pontos-f1 li {
+    font-size: 16px;
+  }
+}

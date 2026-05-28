@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 World</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+
+  <div class="logo">
+    F1 WORLD
+  </div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="equipes.html">Equipes</a>
+    <a href="pilotos.html">Galeria</a>
+    
+   <form class="search-box" id="searchForm" onsubmit="event.preventDefault(); executarBusca();">
+  <input type="text" placeholder="Pesquisar..." id="searchInput" required>
+  <button type="submit">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+    </svg>
+  </button>
+</form>
+
+</header>
+
+<section class="hero">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <h1>F1 WORLD</h1>
+
+    <p>
+      O universo da velocidade, tecnologia e adrenalina da Fórmula 1.
+    </p>
+
+    <div class="botoes">
+
+      <a href="sobre.html" class="btn">
+        Ver Sobre
+      </a>
+
+      <a href="equipes.html" class="btn">
+        Ver Equipes
+      </a>
+
+      <a href="pilotos.html" class="btn">
+        Ver Pilotos
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    Desenvolvido por Evellyn Alem das Chagas - Trabalho final de GCSS.
+  </p>
+</footer>
+
+</body>
+<script>
+function executarBusca() {
+    // Pega o texto digitado e transforma tudo em minúsculo para facilitar a busca
+    const termo = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    // Cria um mapeamento de palavras-chave para as suas páginas reais
+    if (termo.includes('sobre') || termo.includes('historia') || termo.includes('f1')) {
+        window.location.href = 'sobre.html';
+    } 
+    else if (termo.includes('equipe') || termo.includes('escuderia') || termo.includes('ferrari') || termo.includes('mercedes')) {
+        window.location.href = 'equipes.html';
+    } 
+    else if (termo.includes('galeria') || termo.includes('piloto') || termo.includes('foto')) {
+        window.location.href = 'pilotos.html';
+    } 
+    else if (termo.includes('inicio') || termo.includes('home')) {
+        window.location.href = 'index.html';
+    } 
+    else {
+        // Se a pessoa digitar algo que não existe, você pode avisar ou mandar para uma página padrão
+        alert('Nenhum resultado encontrado para: ' + termo);
+    }
+}
+</script>
+</html>
